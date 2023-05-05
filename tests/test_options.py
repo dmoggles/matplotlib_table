@@ -2,7 +2,7 @@ import pytest
 from unittest.mock import MagicMock
 from typing import Any, Dict
 import dataclasses
-from options import TitleOptions, CellOptions, ColumnHeaderOptions
+from mpltable.options import TitleOptions, CellOptions, ColumnHeaderOptions
 
 
 @pytest.fixture

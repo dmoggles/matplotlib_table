@@ -7,7 +7,12 @@ import pandas as pd
 from matplotlib.axes import Axes
 import numpy as np
 from typing import Dict, Any
-from options import TitleOptions, BorderOptions, CellOptions, ColumnHeaderOptions
+from mpltable.options import (
+    TitleOptions,
+    BorderOptions,
+    CellOptions,
+    ColumnHeaderOptions,
+)
 import math
 
 

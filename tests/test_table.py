@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 from unittest.mock import Mock, patch, MagicMock, call
-from table import Table
+from mpltable.table import Table
 from dataclasses import asdict
 from matplotlib.axes import Axes
 
@@ -75,7 +75,7 @@ class TestTableValidateColWidth:
         with pytest.raises(AssertionError):
             table._validate_col_widths()
 
-    @patch("table.Table._validate_col_widths")
+    @patch("mpltable.table.Table._validate_col_widths")
     def test_table_creation_calls__validate_col_widths(self, mock__validate_col_widths, table_data):
         # Given
         ax_mock = MagicMock(spec=Axes)
@@ -213,9 +213,9 @@ class TestTableSetupYCellBoundaries:
 
 
 class TestTableCreateDimensions:
-    @patch("table.Table._setup_table_boundaries")
-    @patch("table.Table._setup_x_cell_boundaries")
-    @patch("table.Table._setup_y_cell_boundaries")
+    @patch("mpltable.table.Table._setup_table_boundaries")
+    @patch("mpltable.table.Table._setup_x_cell_boundaries")
+    @patch("mpltable.table.Table._setup_y_cell_boundaries")
     def test_calls_all_setup_methods(self, mock_setup_y, mock_setup_x, mock_setup_table):
         table = Table(MagicMock(spec=pd.DataFrame), MagicMock(spec=Axes))
         table._create_dimensions()
