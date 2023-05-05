@@ -9,7 +9,6 @@ options = config["options"]
 # Define the setup() arguments
 setup(
     name=metadata["name"],
-    version=metadata["version"],
     author=metadata["author"],
     author_email=metadata["author_email"],
     description=metadata["description"],
@@ -17,7 +16,8 @@ setup(
     long_description_content_type="text/markdown",
     url=metadata["url"],
     license=metadata["license"],
-    packages=find_packages(),
+    packages=find_packages("src"),
+    package_dir={"": "src"},
     python_requires=">=3.6",
     install_requires=options["install_requires"],
     extras_require=config["options.extras_require"],
