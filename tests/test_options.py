@@ -107,7 +107,10 @@ class TestColumnHeaderOptions:
 
     def test_custom_text_kwargs(self):
         column_header_options = ColumnHeaderOptions(text_kwargs={"font_size": 12, "font_color": "blue"})
-        assert column_header_options.text_kwargs == {"font_size": 12, "font_color": "blue"}
+        assert column_header_options.text_kwargs == {
+            "font_size": 12,
+            "font_color": "blue",
+        }
 
     def test_custom_text_kwargs_empty_dict(self):
         column_header_options = ColumnHeaderOptions(text_kwargs={})

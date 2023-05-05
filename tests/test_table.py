@@ -274,7 +274,11 @@ class TestTableDrawColumnNear:
         ax.text.assert_any_call(0.375, 0.75, "B", ha="center", va="center", fontsize=12)
         ax.text.assert_any_call(0.75, 0.75, "C", ha="center", va="center", fontsize=12)
         table._get_cell_x_coordinate.assert_has_calls(
-            [call(0.0, 0.25, 0.05, "center"), call(0.25, 0.5, 0.05, "center"), call(0.5, 1.0, 0.05, "center")],
+            [
+                call(0.0, 0.25, 0.05, "center"),
+                call(0.25, 0.5, 0.05, "center"),
+                call(0.5, 1.0, 0.05, "center"),
+            ],
             any_order=False,
         )
 
@@ -304,7 +308,11 @@ class TestTableDrawColumnNear:
         ax.text.assert_any_call(0.725, 0.75, "C", ha="left", va="center", fontsize=12)
 
         table._get_cell_x_coordinate.assert_has_calls(
-            [call(0.0, 0.25, 0.1, "left"), call(0.25, 0.5, 0.1, "left"), call(0.5, 1.0, 0.1, "left")],
+            [
+                call(0.0, 0.25, 0.1, "left"),
+                call(0.25, 0.5, 0.1, "left"),
+                call(0.5, 1.0, 0.1, "left"),
+            ],
             any_order=False,
         )
 
@@ -342,7 +350,10 @@ class TestTableGetCellXCoordinate:
         right_boundary = 3.0
         padding = 0.1
         alignment = "invalid"
-        with pytest.raises(AssertionError, match="alignment must be one of 'left', 'right', or 'center', got invalid"):
+        with pytest.raises(
+            AssertionError,
+            match="alignment must be one of 'left', 'right', or 'center', got invalid",
+        ):
             Table._get_cell_x_coordinate(left_boundary, right_boundary, padding, alignment)
 
     def test_negative_padding(self):
@@ -366,7 +377,10 @@ class TestTableGetCellXCoordinate:
         right_boundary = 1.0
         padding = 0.1
         alignment = "left"
-        with pytest.raises(AssertionError, match=f"left_boundary must be less than right_boundary, got 3.0 and 1.0"):
+        with pytest.raises(
+            AssertionError,
+            match=f"left_boundary must be less than right_boundary, got 3.0 and 1.0",
+        ):
             Table._get_cell_x_coordinate(left_boundary, right_boundary, padding, alignment)
 
 

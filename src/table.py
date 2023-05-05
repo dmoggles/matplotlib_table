@@ -334,7 +334,14 @@ class Table:
             self._cell_options.alignment,
         )
         y = (self._y_cell_bondaries[i] + self._y_cell_bondaries[i + 1]) / 2
-        self._ax.text(x, y, cell, ha=self._cell_options.alignment, va="center", **self._cell_options.text_kwargs)
+        self._ax.text(
+            x,
+            y,
+            cell,
+            ha=self._cell_options.alignment,
+            va="center",
+            **self._cell_options.text_kwargs,
+        )
 
     def _draw_cell_texts(self):
         """
@@ -366,7 +373,12 @@ class Table:
 
         y = (self._table_title_boundaries[0] + self._table_title_boundaries[1]) / 2
         self._ax.text(
-            x, y, self._table_title, ha=self._title_options.alignment, va="center", **self._title_options.text_kwargs
+            x,
+            y,
+            self._table_title,
+            ha=self._title_options.alignment,
+            va="center",
+            **self._title_options.text_kwargs,
         )
 
     def _draw_title_separator_line(self):
