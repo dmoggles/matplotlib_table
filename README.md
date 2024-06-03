@@ -88,8 +88,6 @@ table.col_widths = [0.2, 0.3, 0.5]
 table.draw()
 ```
 
-For more examples and detailed usage instructions, please refer to the [documentation](https://github.com/yourusername/mpltable/blob/main/docs/README.md).
-
 ## License
 
 mpltable is released under the [MIT License](https://github.com/yourusername/mpltable/blob/main/LICENSE).
